@@ -3,4 +3,5 @@ vendor
 .terraform
 terraform.tfstate*
 .terraform.lock*
+.terraform.tfstate.*
 upcloud-terraform-provider-server_*
