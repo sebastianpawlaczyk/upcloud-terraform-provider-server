@@ -3,8 +3,9 @@ package server
 import (
 	"context"
 	"fmt"
-	"github.com/UpCloudLtd/upcloud-go-api/v8/upcloud/service"
 	"strings"
+
+	"github.com/UpCloudLtd/upcloud-go-api/v8/upcloud/service"
 )
 
 func validateZone(ctx context.Context, service *service.Service, zone string) error {
