@@ -8,9 +8,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/upcloud-terraform-provider-server/internal/server"
+
 	"github.com/UpCloudLtd/upcloud-go-api/v8/upcloud/client"
 	"github.com/UpCloudLtd/upcloud-go-api/v8/upcloud/service"
-
 	"github.com/hashicorp/go-retryablehttp"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
@@ -144,7 +145,9 @@ func (p *upcloudProvider) DataSources(_ context.Context) []func() datasource.Dat
 }
 
 func (p *upcloudProvider) Resources(_ context.Context) []func() resource.Resource {
-	return []func() resource.Resource{}
+	return []func() resource.Resource{
+		server.NewServerResource,
+	}
 }
 
 func newUpCloudServiceConnection(username, password string, httpClient *http.Client, requestTimeout time.Duration, userAgents ...string) *service.Service {

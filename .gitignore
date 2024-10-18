@@ -1,2 +1,5 @@
 vendor
 .idea
+.terraform
+terraform.tfstate*
+upcloud-terraform-provider-server_*
